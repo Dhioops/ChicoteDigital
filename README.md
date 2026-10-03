@@ -1,4 +1,4 @@
-@"
+
 # Chicote Digital (WPF Verlet Physics)
 
 Aplicativo interativo de desktop para Windows que renderiza um chicote com física em tempo real (Integração de Verlet) sobre uma janela 100% transparente.
