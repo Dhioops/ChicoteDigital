@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+
+    <!-- Define o ícone oficial do arquivo .exe no Windows -->
+    <ApplicationIcon>icone.ico</ApplicationIcon>
+
+    <!-- Melhorias de Compilação: Gera um único .exe leve e sem arquivos de lixo (.pdb) -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Embute o ícone nos recursos para aparecer também na Barra de Tarefas -->
+    <Resource Include="icone.ico" />
+  </ItemGroup>
+
+</Project>
