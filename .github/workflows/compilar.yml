@@ -1,0 +1,28 @@
+name: Compilar Chicote Digital (Windows)
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: # Sugestão de melhoria: permite rodar a compilação manualmente clicando em um botão na aba Actions
+
+jobs:
+  build:
+    runs-on: windows-latest # Usa um servidor Windows gratuito da Microsoft para compilar o WPF
+
+    steps:
+    - name: Baixar o código do repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar o .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Compilar o executável (.exe)
+      run: dotnet publish -c Release -o ./Executavel
+
+    - name: Disponibilizar o .exe para download
+      uses: actions/upload-artifact@v4
+      with:
+        name: ChicoteDigital-Windows
+        path: ./Executavel/ChicoteDigital.exe
